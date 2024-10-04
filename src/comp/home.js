@@ -83,7 +83,7 @@ const Home = ({ addtocart }) => {
                 </div>
                 <div className='detail'>
                   <div className='img_box'>
-                    <img src='image/T1.avif' alt='Testimonial' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                    <img src='../image/T1.avif' alt='Testimonial' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
                   </div>
                   <div className='info'>
                     <h3>Stephan Robot</h3>
@@ -116,19 +116,19 @@ const Home = ({ addtocart }) => {
         <div className='container'>
           <div className='left_box'>
             <div className='box'>
-              <img src='image/Multi-Banner-1.avif' alt='Banner 1' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img src='../image/Multi-Banner-1.avif' alt='Banner 1' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
             </div>
             <div className='box'>
-              <img src='image/Multi-Banner-2.avif' alt='Banner 2' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img src='../image/Multi-Banner-2.avif' alt='Banner 2' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
             </div>
           </div>
           <div className='right_box'>
             <div className='top'>
-              <img src='image/Multi-Banner-3.webp' alt='Banner 3' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
-              <img src='image/Multi-Banner-4.avif' alt='Banner 4' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img src='../image/Multi-Banner-3.webp' alt='Banner 3' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img src='../image/Multi-Banner-4.avif' alt='Banner 4' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
             </div>
             <div className='bottom'>
-              <img src='image/Multi-Banner-5.webp' alt='Banner 5' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img src='../image/Multi-Banner-5.webp' alt='Banner 5' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
             </div>
           </div>
         </div>

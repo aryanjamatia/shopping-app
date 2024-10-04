@@ -66,14 +66,14 @@ const Shop = ({shop, Filter, allcatefilter, addtocart}) => {
                 </div>
                 <div className='banner'>
                     <div className='img_box'>
-                        <img src='image/shop_left.avif' alt=''></img>
+                        <img src='../image/shop_left.avif' alt=''></img>
                     </div>
                 </div>
             </div>
             <div className='right_box'>
                 <div className='banner'>
                     <div className='img_box'>
-                        <img src='image/shop_top.webp' alt=''></img>
+                        <img src='../image/shop_top.webp' alt=''></img>
                     </div>
                 </div>
                 <div className='product_box'>
