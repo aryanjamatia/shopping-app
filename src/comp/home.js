@@ -6,60 +6,38 @@ import { AiFillEye, AiFillHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiLogoFacebook, BiLogoTwitter, BiLogoInstagram, BiLogoYoutube } from "react-icons/bi";
 
 const Home = ({ addtocart }) => {
-  // Product category
   const [newProduct, setNewProduct] = useState([]);
-  const [featuredProduct, setFeaturdProduct] = useState([]);
+  const [featuredProduct, setFeaturedProduct] = useState([]);
   const [topProduct, setTopProduct] = useState([]);
-  
-  // Trending Product
   const [trendingProduct, setTrendingProduct] = useState(Homeproduct);
-  
-  // Filter of trending product
+
   const filtercate = (x) => {
-    const filterproduct = Homeproduct.filter((curElm) => {
-      return curElm.type === x;
-    });
-    setTrendingProduct(filterproduct);
+    const filteredProducts = Homeproduct.filter((curElm) => curElm.type === x);
+    setTrendingProduct(filteredProducts);
   };
-  
-  // All Trending Product
+
   const allTrendingProduct = () => {
     setTrendingProduct(Homeproduct);
   };
 
-  // Product Type
   useEffect(() => {
     productcategory();
-  }, []); // Add an empty dependency array if needed
+  }, []);
 
   const productcategory = () => {
-    // New Product
-    const newcategory = Homeproduct.filter((x) => {
-      return x.type === 'new';
-    });
-    setNewProduct(newcategory);
-
-    // Featured Product
-    const featuredcategory = Homeproduct.filter((x) => {
-      return x.type === 'featured';
-    });
-    setFeaturdProduct(featuredcategory);
-
-    // Top Product
-    const topcategory = Homeproduct.filter((x) => {
-      return x.type === 'top';
-    });
-    setTopProduct(topcategory);
+    setNewProduct(Homeproduct.filter((x) => x.type === 'new'));
+    setFeaturedProduct(Homeproduct.filter((x) => x.type === 'featured'));
+    setTopProduct(Homeproduct.filter((x) => x.type === 'top'));
   };
 
   return (
     <>
       <div className='home'>
         <div className='top_banner'>
-          <div className='contant'>
+          <div className='content'>
             <h3>silver aluminum</h3>
             <h2>Apple Watch</h2>
-            <p>30% off at your first odder</p>
+            <p>30% off at your first order</p>
             <Link to='/shop' className='link'>Shop Now</Link>
           </div>
         </div>
@@ -68,40 +46,32 @@ const Home = ({ addtocart }) => {
             <div className='left_box'>
               <div className='header'>
                 <div className='heading'>
-                  <h2 onClick={() => allTrendingProduct()}>trending product</h2>
+                  <h2 onClick={allTrendingProduct}>Trending Products</h2>
                 </div>
                 <div className='cate'>
                   <h3 onClick={() => filtercate('new')}>New</h3>
                   <h3 onClick={() => filtercate('featured')}>Featured</h3>
-                  <h3 onClick={() => filtercate('top')}>top selling</h3>
+                  <h3 onClick={() => filtercate('top')}>Top Selling</h3>
                 </div>
               </div>
               <div className='products'>
                 <div className='container'>
-                  {
-                    trendingProduct.map((curElm) => {
-                      return (
-                        <div className='box' key={curElm.id}> {/* Added key prop */}
-                          <div className='img_box'>
-                            <img src={curElm.image} alt='' />
-                            <div className='icon'>
-                              <div className='icon_box'>
-                                <AiFillEye />
-                              </div>
-                              <div className='icon_box'>
-                                <AiFillHeart />
-                              </div>
-                            </div>
-                          </div>
-                          <div className='info'>
-                            <h3>{curElm.Name}</h3>
-                            <p>${curElm.price}</p>
-                            <button className='btn' onClick={() => addtocart(curElm)}>Add to cart</button>
-                          </div>
+                  {trendingProduct.map((curElm) => (
+                    <div className='box' key={curElm.id}>
+                      <div className='img_box'>
+                        <img src={curElm.image} alt={curElm.Name} onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                        <div className='icon'>
+                          <div className='icon_box'><AiFillEye /></div>
+                          <div className='icon_box'><AiFillHeart /></div>
                         </div>
-                      );
-                    })
-                  }
+                      </div>
+                      <div className='info'>
+                        <h3>{curElm.Name}</h3>
+                        <p>${curElm.price}</p>
+                        <button className='btn' onClick={() => addtocart(curElm)}>Add to Cart</button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 <button>Show More</button>
               </div>
@@ -110,40 +80,32 @@ const Home = ({ addtocart }) => {
               <div className='right_container'>
                 <div className='testimonial'>
                   <div className='head'>
-                    <h3>our testmonial</h3>
+                    <h3>Our Testimonial</h3>
                   </div>
                   <div className='detail'>
                     <div className='img_box'>
-                      <img src='image/T1.avif' alt='testmonial' />
+                      <img src='image/T1.avif' alt='Testimonial' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
                     </div>
                     <div className='info'>
-                      <h3>stephan robot</h3>
-                      <h4>web designer</h4>
-                      <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattisr nullam mattis.</p>
+                      <h3>Stephan Robot</h3>
+                      <h4>Web Designer</h4>
+                      <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattis.</p>
                     </div>
                   </div>
                 </div>
                 <div className='newsletter'>
                   <div className='head'>
-                    <h3>newsletter</h3>
+                    <h3>Newsletter</h3>
                   </div>
                   <div className='form'>
-                    <p>join our malling list</p>
+                    <p>Join our mailing list</p>
                     <input type='email' placeholder='E-mail' autoComplete='off' />
-                    <button>subscribe</button>
+                    <button>Subscribe</button>
                     <div className='icon_box'>
-                      <div className='icon'>
-                        <BiLogoFacebook />
-                      </div>
-                      <div className='icon'>
-                        <BiLogoTwitter />
-                      </div>
-                      <div className='icon'>
-                        <BiLogoInstagram />
-                      </div>
-                      <div className='icon'>
-                        <BiLogoYoutube />
-                      </div>
+                      <div className='icon'><BiLogoFacebook /></div>
+                      <div className='icon'><BiLogoTwitter /></div>
+                      <div className='icon'><BiLogoInstagram /></div>
+                      <div className='icon'><BiLogoYoutube /></div>
                     </div>
                   </div>
                 </div>
@@ -155,19 +117,19 @@ const Home = ({ addtocart }) => {
           <div className='container'>
             <div className='left_box'>
               <div className='box'>
-                <img src='image/Multi-Banner-1.avif' alt='banner' />
+                <img src='image/Multi-Banner-1.avif' alt='Banner 1' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
               </div>
               <div className='box'>
-                <img src='image/Multi-Banner-2.avif' alt='banner' />
+                <img src='image/Multi-Banner-2.avif' alt='Banner 2' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
               </div>
             </div>
             <div className='right_box'>
               <div className='top'>
-                <img src='image/Multi-Banner-3.webp' alt='' />
-                <img src='image/Multi-Banner-4.avif' alt='' />
+                <img src='image/Multi-Banner-3.webp' alt='Banner 3' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                <img src='image/Multi-Banner-4.avif' alt='Banner 4' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
               </div>
               <div className='bottom'>
-                <img src='image/Multi-Banner-5.webp' alt='' />
+                <img src='image/Multi-Banner-5.webp' alt='Banner 5' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
               </div>
             </div>
           </div>
@@ -178,76 +140,64 @@ const Home = ({ addtocart }) => {
               <div className='header'>
                 <h2>New Product</h2>
               </div>
-              {
-                newProduct.map((curElm) => {
-                  return (
-                    <div className='productbox' key={curElm.id}> {/* Added key prop */}
-                      <div className='img-box'>
-                        <img src={curElm.image} alt='' />
-                      </div>
-                      <div className='detail'>
-                        <h3>{curElm.Name}</h3>
-                        <p>$ {curElm.price}</p>
-                        <div className='icon'>
-                          <button><AiFillEye /></button>
-                          <button><AiFillHeart /></button>
-                          <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
-                        </div>
-                      </div>
+              {newProduct.map((curElm) => (
+                <div className='productbox' key={curElm.id}>
+                  <div className='img-box'>
+                    <img src={curElm.image} alt={curElm.Name} onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                  </div>
+                  <div className='detail'>
+                    <h3>{curElm.Name}</h3>
+                    <p>${curElm.price}</p>
+                    <div className='icon'>
+                      <button><AiFillEye /></button>
+                      <button><AiFillHeart /></button>
+                      <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
                     </div>
-                  );
-                })
-              }
+                  </div>
+                </div>
+              ))}
             </div>
             <div className='box'>
               <div className='header'>
                 <h2>Featured Product</h2>
               </div>
-              {
-                featuredProduct.map((curElm) => {
-                  return (
-                    <div className='productbox' key={curElm.id}> {/* Added key prop */}
-                      <div className='img-box'>
-                        <img src={curElm.image} alt='' />
-                      </div>
-                      <div className='detail'>
-                        <h3>{curElm.Name}</h3>
-                        <p>$ {curElm.price}</p>
-                        <div className='icon'>
-                          <button><AiFillEye /></button>
-                          <button><AiFillHeart /></button>
-                          <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
-                        </div>
-                      </div>
+              {featuredProduct.map((curElm) => (
+                <div className='productbox' key={curElm.id}>
+                  <div className='img-box'>
+                    <img src={curElm.image} alt={curElm.Name} onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                  </div>
+                  <div className='detail'>
+                    <h3>{curElm.Name}</h3>
+                    <p>${curElm.price}</p>
+                    <div className='icon'>
+                      <button><AiFillEye /></button>
+                      <button><AiFillHeart /></button>
+                      <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
                     </div>
-                  );
-                })
-              }
+                  </div>
+                </div>
+              ))}
             </div>
             <div className='box'>
               <div className='header'>
                 <h2>Top Product</h2>
               </div>
-              {
-                topProduct.map((curElm) => {
-                  return (
-                    <div className='productbox' key={curElm.id}> {/* Added key prop */}
-                      <div className='img-box'>
-                        <img src={curElm.image} alt='' />
-                      </div>
-                      <div className='detail'>
-                        <h3>{curElm.Name}</h3>
-                        <p>$ {curElm.price}</p>
-                        <div className='icon'>
-                          <button><AiFillEye /></button>
-                          <button><AiFillHeart /></button>
-                          <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
-                        </div>
-                      </div>
+              {topProduct.map((curElm) => (
+                <div className='productbox' key={curElm.id}>
+                  <div className='img-box'>
+                    <img src={curElm.image} alt={curElm.Name} onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                  </div>
+                  <div className='detail'>
+                    <h3>{curElm.Name}</h3>
+                    <p>${curElm.price}</p>
+                    <div className='icon'>
+                      <button><AiFillEye /></button>
+                      <button><AiFillHeart /></button>
+                      <button onClick={() => addtocart(curElm)}><AiOutlineShoppingCart /></button>
                     </div>
-                  );
-                })
-              }
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
