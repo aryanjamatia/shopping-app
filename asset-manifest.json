@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/shopping-app/static/css/main.68770ea1.css",
+    "main.js": "/shopping-app/static/js/main.c948cd63.js",
+    "static/js/453.076d0c45.chunk.js": "/shopping-app/static/js/453.076d0c45.chunk.js",
+    "static/media/pro.jpg": "/shopping-app/static/media/pro.ab991f377796b5e53083.jpg",
+    "static/media/Multi-Banner-5.webp": "/shopping-app/static/media/Multi-Banner-5.e5896add99d2449723ab.webp",
+    "static/media/slide-1.webp": "/shopping-app/static/media/slide-1.c4a81f50b414c8a83765.webp",
+    "static/media/p10.jpg": "/shopping-app/static/media/p10.6327e864f1cfccbf1331.jpg",
+    "static/media/p9.jpg": "/shopping-app/static/media/p9.394eb27873c9761dfb2a.jpg",
+    "static/media/p4.webp": "/shopping-app/static/media/p4.33384b721d3f320e793c.webp",
+    "static/media/p8.webp": "/shopping-app/static/media/p8.33384b721d3f320e793c.webp",
+    "static/media/p1.webp": "/shopping-app/static/media/p1.a6e665068f84942d1803.webp",
+    "static/media/p11.jpg": "/shopping-app/static/media/p11.baa757c719c0f70c88bf.jpg",
+    "static/media/Multi-Banner-3.webp": "/shopping-app/static/media/Multi-Banner-3.04af832f8f84581cee1e.webp",
+    "static/media/p6.webp": "/shopping-app/static/media/p6.a6b9fe6030a23712b293.webp",
+    "static/media/p2.webp": "/shopping-app/static/media/p2.7a0e6f59a46805604183.webp",
+    "static/media/shop_top.webp": "/shopping-app/static/media/shop_top.39be206f34f9d17ee7e8.webp",
+    "static/media/p5.webp": "/shopping-app/static/media/p5.6c123010879ff03013a2.webp",
+    "static/media/shop_left.avif": "/shopping-app/static/media/shop_left.363c4be2212f23b4b6a0.avif",
+    "static/media/p7.webp": "/shopping-app/static/media/p7.8a2f088d2d5a35d430e1.webp",
+    "static/media/Multi-Banner-1.avif": "/shopping-app/static/media/Multi-Banner-1.6c33543db4d3d6eeca58.avif",
+    "static/media/p3.webp": "/shopping-app/static/media/p3.e82488caad3ffd7af3fa.webp",
+    "static/media/Multi-banner-4.avif": "/shopping-app/static/media/Multi-banner-4.8066d9fdcafa6fe74c13.avif",
+    "static/media/Multi-banner-2.avif": "/shopping-app/static/media/Multi-banner-2.56b12c88f5f8c6e039c5.avif",
+    "static/media/logo.webp": "/shopping-app/static/media/logo.796d25da868df8ee3227.webp",
+    "index.html": "/shopping-app/index.html",
+    "main.68770ea1.css.map": "/shopping-app/static/css/main.68770ea1.css.map",
+    "main.c948cd63.js.map": "/shopping-app/static/js/main.c948cd63.js.map",
+    "453.076d0c45.chunk.js.map": "/shopping-app/static/js/453.076d0c45.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68770ea1.css",
+    "static/js/main.c948cd63.js"
+  ]
+}
