@@ -45,10 +45,14 @@ const Footer = () => {
                 </div>
             </div>
             <div className='right_box'>
-                <div className='header'>
-                    <img src='image/logo.webp' alt=''></img>
-                    <p>Lorem ipsum dolor sit amet, consectetur Nuliscing elit. Duis faucibus ipsum id sem Putconsequat Text.</p>
-                </div>
+            <div className='header'>
+    <img 
+        src={require('../image/logo.webp')} 
+        alt='Logo' 
+    />
+    <p>Lorem ipsum dolor sit amet, consectetur Nuliscing elit. Duis faucibus ipsum id sem Putconsequat Text.</p>
+</div>
+
                 <div className='bottom'>
                     <div className='box'>
                         <h3>Your Account</h3>

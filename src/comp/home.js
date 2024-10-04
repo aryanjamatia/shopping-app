@@ -5,6 +5,14 @@ import Homeproduct from './home_product';
 import { AiFillEye, AiFillHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiLogoFacebook, BiLogoTwitter, BiLogoInstagram, BiLogoYoutube } from "react-icons/bi";
 
+// Import images
+import MultiBanner1 from '../image/Multi-Banner-1.avif';
+import MultiBanner2 from '../image/Multi-banner-2.avif';
+import MultiBanner3 from '../image/Multi-Banner-3.webp';
+import MultiBanner4 from '../image/Multi-banner-4.avif';
+import MultiBanner5 from '../image/Multi-Banner-5.webp';
+import TestimonialImage from '../image/pro.jpg'; // Assuming the image is also in the same folder
+
 const Home = ({ addtocart }) => {
   const [newProduct, setNewProduct] = useState([]);
   const [featuredProduct, setFeaturedProduct] = useState([]);
@@ -83,12 +91,16 @@ const Home = ({ addtocart }) => {
                 </div>
                 <div className='detail'>
                   <div className='img_box'>
-                    <img src='../image/T1.avif' alt='Testimonial' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+                    <img 
+                        src={TestimonialImage} 
+                        alt='Testimonial' 
+                        onError={(e) => e.target.src = ''} 
+                    />
                   </div>
                   <div className='info'>
-                    <h3>Stephan Robot</h3>
+                    <h3>Aryan Jamatia</h3>
                     <h4>Web Designer</h4>
-                    <p>Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar nullam mattis.</p>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -116,19 +128,39 @@ const Home = ({ addtocart }) => {
         <div className='container'>
           <div className='left_box'>
             <div className='box'>
-              <img src='../image/Multi-Banner-1.avif' alt='Banner 1' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img 
+                  src={MultiBanner1} 
+                  alt='Banner 1' 
+                  onError={(e) => e.target.src = 'fallback-image-url.jpg'} 
+              />
             </div>
             <div className='box'>
-              <img src='../image/Multi-Banner-2.avif' alt='Banner 2' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img 
+                  src={MultiBanner2} 
+                  alt='Banner 2' 
+                  onError={(e) => e.target.src = 'fallback-image-url.jpg'} 
+              />
             </div>
           </div>
           <div className='right_box'>
             <div className='top'>
-              <img src='../image/Multi-Banner-3.webp' alt='Banner 3' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
-              <img src='../image/Multi-Banner-4.avif' alt='Banner 4' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img 
+                  src={MultiBanner3} 
+                  alt='Banner 3' 
+                  onError={(e) => e.target.src = 'fallback-image-url.jpg'} 
+              />
+              <img 
+                  src={MultiBanner4} 
+                  alt='Banner 4' 
+                  onError={(e) => e.target.src = 'fallback-image-url.jpg'} 
+              />
             </div>
             <div className='bottom'>
-              <img src='../image/Multi-Banner-5.webp' alt='Banner 5' onError={(e) => e.target.src = 'fallback-image-url.jpg'} />
+              <img 
+                  src={MultiBanner5} 
+                  alt='Banner 5' 
+                  onError={(e) => e.target.src = 'fallback-image-url.jpg'} 
+              />
             </div>
           </div>
         </div>
